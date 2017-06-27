@@ -8,6 +8,6 @@ package chapter10.composition.and.inheritance
   *                 methods and fields in the same namespace
   *                 val contents overrides def contents)
   */
-class ArrayElement (
+private final class ArrayElement (
                      override val contents: Array[String]
-                   ) extends Element {}
+                     ) extends Element {}
