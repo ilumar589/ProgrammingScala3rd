@@ -9,7 +9,5 @@ package chapter10.composition.and.inheritance
   *                 val contents overrides def contents)
   */
 class ArrayElement (
-  override val contents: Array[String]
-) extends Element {
-
-}
+                     override val contents: Array[String]
+                   ) extends Element {}
