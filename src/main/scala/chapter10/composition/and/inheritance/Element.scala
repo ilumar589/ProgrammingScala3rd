@@ -83,7 +83,16 @@ abstract class Element {
       val right = elem(' ', w - width - left.width, height)
       left beside this beside right
     }
-  }
+  } ensuring(w <= _.width)
+
+  private def widen2(w: Int) : Element = {
+    if (w <= width) this
+    else {
+      val left = elem(' ', (w - width) / 2, height)
+      val right = elem(' ', w - width - left.width, height)
+      left beside this beside right
+    }
+  } ensuring((result: Element) => {w <= result.width})
 
   private def heighten(h: Int) : Element = {
     if (h <= height) this
