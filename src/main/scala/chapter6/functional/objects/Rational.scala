@@ -21,7 +21,5 @@ class Rational(n: Int, d: Int) {
   def / (that: Rational): Rational = new Rational(numerator * that.denominator, denominator * that.numerator)
   def / (i: Int): Rational = new Rational(numerator, denominator * i)
 
-  private def greatestCommonDenominator(a: Int, b: Int) : Int = {
-    if (b == 0) a else greatestCommonDenominator(b, a % b)
-  }
+  private def greatestCommonDenominator(a: Int, b: Int) : Int = if (b == 0) a else greatestCommonDenominator(b, a % b)
 }
